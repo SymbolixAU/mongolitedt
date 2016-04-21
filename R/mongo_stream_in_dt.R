@@ -1,5 +1,7 @@
-
-
+#' Read in MongoDB data
+#' @param cur MongoDB Cursor
+#' @param pagesize Pagesize
+#' @param verbose Verbose
 mongo_stream_in_dt <- function(cur, pagesize = 1000, verbose = TRUE){
 
   # Type validation
@@ -39,19 +41,4 @@ mongo_stream_in_dt <- function(cur, pagesize = 1000, verbose = TRUE){
   return(dt)
 }
 
-try_rbind_page <- function(lst){
-
-  lst <- tryCatch({
-    rbindlist(lst)
-  },
-  error = function(cond){
-    ## causes of errors:
-    ## - unsupported data type (e.g. 'raw' oid)
-    message("error rbinding - need to fix")
-    return(lst <- "temp")
-  },
-  warning = function(cond){
-    message('warning message')
-  })
-}
 
