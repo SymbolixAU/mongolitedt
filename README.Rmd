@@ -1,7 +1,10 @@
 # mongolitedt
 
 
-extension of mongolite
+Extends `mongolite` with `finddt()` and `aggregatedt()` that return `data.table` objects. 
+
+
+
 
 
 

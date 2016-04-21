@@ -5,16 +5,6 @@
 
 using namespace Rcpp;
 
-// rcpp_hello
-List rcpp_hello();
-RcppExport SEXP mongolitedt_rcpp_hello() {
-BEGIN_RCPP
-    Rcpp::RObject __result;
-    Rcpp::RNGScope __rngScope;
-    __result = Rcpp::wrap(rcpp_hello());
-    return __result;
-END_RCPP
-}
 // unlock_environment
 bool unlock_environment(Environment env);
 RcppExport SEXP mongolitedt_unlock_environment(SEXP envSEXP) {
