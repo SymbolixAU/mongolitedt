@@ -1,12 +1,12 @@
 Package: mongolitedt
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Extends mongolite With Additional Functions
 Version: 0.1
 Date: 2016-04-21
-Author: Who wrote it
-Maintainer: Who to complain to <yourfault@somewhere.net>
-Description: More about what it does (maybe more than one line)
-License: What license is it under?
+Author: D Cooley
+Maintainer: David Cooley <dcooley@symbolix.com.au>
+Description: Adds functions to a mongolite::mongo connection object that return data.table objects
+License:
 LazyData: TRUE
 Imports:
     Rcpp (>= 0.12.3)
