@@ -13,6 +13,11 @@ bind_mongolitedt <- function(mongo){
     mongo_stream_in_dt(cur, pagesize = pagesize, verbose = verbose)
   }
 
+  mongo$aggregatedt <- function(pipeline = '{}', pagesize = 1000){
+    cur <- mongo_collection_aggregate(col, pipeline)
+    mongo_stream_in_dt(cur, pagesize = pagesize, verbose = verbose)
+  }
+
   environment(mongo$finddt) <- environment(mongo$find)
 }
 

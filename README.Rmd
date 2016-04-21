@@ -3,8 +3,20 @@
 
 Extends `mongolite` with `finddt()` and `aggregatedt()` that return `data.table` objects. 
 
+**Important**
+
+To use these functions the query sent to mongodb **must** return data that can be coerced into a data.table. 
+
+## Useage
+
+Define a mongolite::mongo connection object 
+
+`mongo <- mongo(collection = "test", db = "test", url = "mongodb://localhost")`
+
+Then call `bind_mongolitedt(mongo)` to bind the `finddt()` and `aggregatedt()` functions
 
 
+`mongo$finddt(limit = 10)` returns 10 rows of a data.table
 
 
 
