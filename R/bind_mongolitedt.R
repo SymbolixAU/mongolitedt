@@ -23,6 +23,7 @@ bind_mongolitedt <- function(mongo){
   }
 
   environment(mongo$finddt) <- environment(mongo$find)
+  environment(mongo$aggregatedt) <- environment(mongo$find)
 }
 
 
