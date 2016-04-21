@@ -11,7 +11,7 @@ try_rbind_page <- function(lst){
     ## causes of errors:
     ## - unsupported data type (e.g. 'raw' oid)
     message("error rbinding - need to fix")
-    return(lst <- "temp")
+    #return(lst <- "temp")
   },
   warning = function(cond){
     message('warning message')
