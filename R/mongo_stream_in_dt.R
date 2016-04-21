@@ -17,8 +17,8 @@ mongo_stream_in_dt <- function(cur, pagesize = 1000, verbose = TRUE){
     count <- count + length(page)
 
     ## remove any 'raw' columns
-    classes <- unique(unlist(lapply(page, function(x) lapply(x, class) != "raw")))
-
+    # classes <- unique(unlist(lapply(page, function(x) lapply(x, class) != "raw")))
+    page <- lapply(page, function(x) x[lapply(x, class)!="raw"])
 
     dt_page <- try_rbind_page(page)
     # dt_page <- rbindlist(page)
