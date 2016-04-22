@@ -5,8 +5,8 @@ Version: 0.1
 Date: 2016-04-21
 Author: D Cooley
 Maintainer: David Cooley <dcooley@symbolix.com.au>
-Description: Adds functions to a mongolite::mongo connection object that return data.table objects
-License: MIT
+Description: A faster implementation of find and aggregate functions for mongolite.
+License: Apache License 2.0
 LazyData: TRUE
 Imports:
     Rcpp (>= 0.12.3)
