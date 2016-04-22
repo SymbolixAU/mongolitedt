@@ -9,12 +9,12 @@ mongo_stream_in_dt <- function(cur, pagesize = 1000, verbose = TRUE){
   stopifnot(is.logical(verbose))
 
   # Read data page by page and rbindlist into data.table
-  count <- 0
+  # count <- 0
   dt <- data.table()
   repeat {
     page <- mongolite:::mongo_cursor_next_page(cur, pagesize)
     ## page is a list, with a 'date' flag on dates
-    count <- count + length(page)
+    #count <- count + length(page)
 
     ## remove any 'raw' columns
     # classes <- unique(unlist(lapply(page, function(x) lapply(x, class) != "raw")))
@@ -33,7 +33,7 @@ mongo_stream_in_dt <- function(cur, pagesize = 1000, verbose = TRUE){
       dt <- rbindlist(list(dt, dt_page), use.names=T)
     }
 
-    cat("\r Found", count, "records...")
+    #cat("\r Found", count, "records...")
 
     if(length(page) < pagesize)
       break
