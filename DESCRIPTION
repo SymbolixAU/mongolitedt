@@ -6,7 +6,7 @@ Date: 2016-04-21
 Author: D Cooley
 Maintainer: David Cooley <dcooley@symbolix.com.au>
 Description: Adds functions to a mongolite::mongo connection object that return data.table objects
-License:
+License: MIT
 LazyData: TRUE
 Imports:
     Rcpp (>= 0.12.3)
