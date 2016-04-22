@@ -21,6 +21,12 @@ Then use the functions as you would standard `mongolite` functions:
 
 `mongo$finddt(limit = 10)` returns 10 rows of a data.table
 
+some quick benchmarks:
 
+ - `mongo$finddt` 1,000,000 documents at pagesize 100000 ~10 seconds
+ - `mongo$find` 1,000,000 documents at pagesize 100000 ~30 seconds.
+
+ - `mongo$finddt` - 5,000,000 documents at pagesize 100000 ~60 seconds
+ - `mongo$find`   - 5,000,000 documents at pagesize 100000 ~157 seconds
 
 
