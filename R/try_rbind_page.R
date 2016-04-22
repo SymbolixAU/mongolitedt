@@ -10,7 +10,7 @@ try_rbind_page <- function(lst){
   error = function(cond){
     ## causes of errors:
     ## - unsupported data type (e.g. 'raw' oid)
-    message("error rbinding - need to fix")
+    message("Error coercing list into data.table. Please ensure the query returns a structure that can be used by data.table::rbindlist(), and that all data types are supported")
     #return(lst <- "temp")
   },
   warning = function(cond){
