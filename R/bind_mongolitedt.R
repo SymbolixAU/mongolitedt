@@ -3,6 +3,8 @@
 #' Binds functions to a **mongolite::mongo** object
 #' @param mongo A mongolite::mongo connection object to which the functions are bound
 #' @return mongo The mongo object with additional functions
+#' @importFrom Rcpp evalCpp
+#' @useDynLib mongolitedt
 #' @export
 bind_mongolitedt <- function(mongo){
 

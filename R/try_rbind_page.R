@@ -1,6 +1,6 @@
-#' try_rbind_page
+#' rbind page
 #'
-#' attempt to data.table::rbindlist the page returned by the mongo cursor
+#' attempt to **data.table::rbindlist** the page object returned by the mongo cursor
 #' @param lst List object of the returned MongoDB data
 try_rbind_page <- function(lst){
 

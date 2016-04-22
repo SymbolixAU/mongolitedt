@@ -2,7 +2,7 @@
 % Please edit documentation in R/try_rbind_page.R
 \name{try_rbind_page}
 \alias{try_rbind_page}
-\title{try_rbind_page}
+\title{rbind page}
 \usage{
 try_rbind_page(lst)
 }
@@ -10,6 +10,6 @@ try_rbind_page(lst)
 \item{lst}{List object of the returned MongoDB data}
 }
 \description{
-attempt to data.table::rbindlist the page returned by the mongo cursor
+attempt to **data.table::rbindlist** the page object returned by the mongo cursor
 }
 
