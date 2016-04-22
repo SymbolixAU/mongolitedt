@@ -1,4 +1,8 @@
 #' Read in MongoDB data
+#'
+#' Takes a mongodb cursor and reads the data into a data.table object.
+#'
+#'
 #' @param cur MongoDB Cursor
 #' @param pagesize Pagesize
 #' @param verbose Verbose
