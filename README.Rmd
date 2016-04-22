@@ -3,6 +3,8 @@
 
 Extends `mongolite` with `finddt()` and `aggregatedt()` that return `data.table` objects. 
 
+`finddt` and `aggregate` are faster implementations of `find` and `aggregate`, but wtih some limitations.
+
 **Important**
 
 To use these functions the query sent to mongodb **must** return data that can be coerced into a data.table using `data.table::rbindlist`
