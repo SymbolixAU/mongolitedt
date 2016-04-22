@@ -2,7 +2,7 @@
 % Please edit documentation in R/bind_mongolitedt.R
 \name{bind_mongolitedt}
 \alias{bind_mongolitedt}
-\title{Bind_mongolitedt}
+\title{Bind Mongolitedt}
 \usage{
 bind_mongolitedt(mongo)
 }
@@ -13,6 +13,6 @@ bind_mongolitedt(mongo)
 mongo The mongo object with additional functions
 }
 \description{
-Bind functions to a mongolite::mongo object
+Binds functions to a **mongolite::mongo** object
 }
 
