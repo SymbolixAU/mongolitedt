@@ -5,9 +5,9 @@ Extends `mongolite` with `finddt()` and `aggregatedt()` that return `data.table`
 
 **Important**
 
-To use these functions the query sent to mongodb **must** return data that can be coerced into a data.table. 
+To use these functions the query sent to mongodb **must** return data that can be coerced into a data.table using `data.table::rbindlist`
 
-`aggregatedt` must also remove the `_id` field from the query ([issues #1](https://github.com/SymbolixAU/mongolitedt/issues/1))
+
 
 ## Useage
 
@@ -17,6 +17,7 @@ Define a mongolite::mongo connection object
 
 Then call `bind_mongolitedt(mongo)` to bind the `finddt()` and `aggregatedt()` functions
 
+Then use the functions as you would standard `mongolite` functions:
 
 `mongo$finddt(limit = 10)` returns 10 rows of a data.table
 
