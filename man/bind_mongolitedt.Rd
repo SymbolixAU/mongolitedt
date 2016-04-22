@@ -13,6 +13,29 @@ bind_mongolitedt(mongo)
 mongo The mongo object with additional functions
 }
 \description{
-Binds functions to a **mongolite::mongo** object
+Binds functions to a \code{mongolite::mongo} object. The data returned from the MongoDB query
+must be able to be coerced into a data.table.
+}
+\section{Methods}{
+
+\describe{
+ \item{\code{aggregatedt(pipeline = '{}', pagesize = 1000)}}{Execute a pipeline using the Mongo aggregation framework. Will return all data as a single data.table}
+ \item{\code{finddt(query = '{}', fields = '{"_id" : 0}', sort = '{}', skip = 0, limit = 0, pagesize = 1000)}}{Retrieve \code{fields} from records matching \code{query}. Will return all data as a single data.table}
+ }
+}
+\examples{
+\dontrun{
+## create mongolite::mongo connection
+mongo <- mongolite::mongo(collection = "test", db = "test", url = "mongodb://localhost")
+
+## bind mongolitedt functions
+bind_mongolitedt(mongo)
+
+## finddt
+mongo$finddt()
+
+## aggregatedt
+mongo$aggregatedt()
+}
 }
 
