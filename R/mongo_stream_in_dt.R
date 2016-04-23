@@ -39,6 +39,8 @@ mongo_stream_in_dt <- function(cur, pagesize = 1000, verbose = TRUE){
     if(length(page) < pagesize)
       break
   }
+
+  if(verbose) cat("\r Imported", count, "records.\n")
   return(dt)
 }
 
