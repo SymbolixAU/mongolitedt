@@ -33,7 +33,8 @@ mongo_stream_in_dt <- function(cur, pagesize = 1000, verbose = TRUE){
       dt <- rbindlist(list(dt, dt_page), use.names=T)
     }
 
-    cat("\r Found", count, "records...")
+    if(verbose)
+      cat("\r Found", count, "records...")
 
     if(length(page) < pagesize)
       break
