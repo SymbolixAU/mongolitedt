@@ -30,7 +30,7 @@ mongo_stream_in_dt <- function(cur, pagesize = 1000, verbose = TRUE){
     if(nrow(dt) == 0){
       dt <- dt_page
     }else{
-      dt <- data.table::rbindlist(list(dt, dt_page), use.names=T)
+      dt <- data.table::rbindlist(list(dt, dt_page), use.names=T, fill = T)
     }
 
     if(verbose)
