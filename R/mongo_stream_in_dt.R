@@ -13,7 +13,7 @@ mongo_stream_in_dt <- function(cur, pagesize = 1000, verbose = TRUE){
 
   # Read data page by page and rbindlist into data.table
   count <- 0
-  dt <- data.table()
+  dt <- data.table::data.table()
   repeat {
     page <- mongolite:::mongo_cursor_next_page(cur, pagesize)
     ## page is a list, with a 'date' flag on dates

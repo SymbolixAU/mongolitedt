@@ -10,8 +10,7 @@ Description: A faster implementation of find and aggregate functions for
 License: Apache License 2.0
 LazyData: TRUE
 Imports:
-    Rcpp (>= 0.12.3)
-Depends:
+    Rcpp (>= 0.12.3),
     mongolite,
     data.table
 LinkingTo: Rcpp
