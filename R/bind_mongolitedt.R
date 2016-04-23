@@ -1,10 +1,10 @@
 #' Bind Mongolitedt
 #'
-#' Binds functions to a \code{mongolite::mongo} object. The data returned from the MongoDB query
-#' must be able to be coerced into a data.table.
+#' Binds methods to a \code{mongolite::mongo} object. The data returned from the MongoDB query
+#' must be able to be coerced into a \code{data.table}.
 #'
-#' @param mongo A mongolite::mongo connection object to which the functions are bound
-#' @return mongo The mongo object with additional functions
+#' @param mongo A \code{mongolite::mongo} connection object to which the methods are bound
+#' @return mongo The mongo object with additional methods
 #' @importFrom Rcpp evalCpp
 #' @useDynLib mongolitedt
 #' @export
@@ -13,7 +13,7 @@
 #' ## create mongolite::mongo connection
 #' mongo <- mongolite::mongo(collection = "test", db = "test", url = "mongodb://localhost")
 #'
-#' ## bind mongolitedt functions
+#' ## bind mongolitedt methods
 #' bind_mongolitedt(mongo)
 #'
 #' ## finddt
@@ -30,8 +30,9 @@
 bind_mongolitedt <- function(mongo){
 
   ## test mongo is correct type/class/object
-
-  ## Rcpp::sourceCpp('./src/unlock.cpp')
+  ## sum(class(mongo) %in% c("mongo", "jeroen")) >= 2
+  ## inherits(mongo, "mongo")
+  ## is(mongo, "mongo")
   unlock_environment(mongo)
 
   ## assign new finddt function
