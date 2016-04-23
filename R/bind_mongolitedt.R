@@ -1,4 +1,3 @@
-#' @import data.table mongolite
 #' @include mongo_stream_in_dt.R
 NULL
 
@@ -9,7 +8,9 @@ NULL
 #'
 #' @param mongo A \code{mongolite::mongo} connection object to which the methods are bound
 #' @return mongo The mongo object with additional methods
+#' @import mongolite
 #' @importFrom Rcpp evalCpp
+#' @importFrom data.table rbindlist
 #' @useDynLib mongolitedt
 #' @export
 #' @aliases mongolitedt
@@ -54,7 +55,6 @@ bind_mongolitedt <- function(mongo){
   environment(mongo$finddt) <- environment(mongo$find)
   environment(mongo$aggregatedt) <- environment(mongo$find)
 }
-
 
 
 
