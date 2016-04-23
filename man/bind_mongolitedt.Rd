@@ -2,6 +2,7 @@
 % Please edit documentation in R/bind_mongolitedt.R
 \name{bind_mongolitedt}
 \alias{bind_mongolitedt}
+\alias{mongolitedt}
 \title{Bind Mongolitedt}
 \usage{
 bind_mongolitedt(mongo)

@@ -20,7 +20,7 @@ mongo_stream_in_dt <- function(cur, pagesize = 1000, verbose = TRUE){
     count <- count + length(page)
 
     ## remove any 'raw' columns (e.g., the '_id' oid field)
-    page <- lapply(page, function(x) x[lapply(x, class)!="raw"])
+    page <- lapply(page, function(x) x[lapply(x, class) != "raw"])
 
     dt_page <- try_rbind_page(page)
     classes <- lapply(dt_page, class) == "list"
@@ -30,7 +30,7 @@ mongo_stream_in_dt <- function(cur, pagesize = 1000, verbose = TRUE){
     if(nrow(dt) == 0){
       dt <- dt_page
     }else{
-      dt <- rbindlist(list(dt, dt_page), use.names=T)
+      dt <- data.table::rbindlist(list(dt, dt_page), use.names=T)
     }
 
     if(verbose)
