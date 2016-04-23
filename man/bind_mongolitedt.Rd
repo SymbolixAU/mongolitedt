@@ -7,14 +7,14 @@
 bind_mongolitedt(mongo)
 }
 \arguments{
-\item{mongo}{A mongolite::mongo connection object to which the functions are bound}
+\item{mongo}{A \code{mongolite::mongo} connection object to which the methods are bound}
 }
 \value{
-mongo The mongo object with additional functions
+mongo The mongo object with additional methods
 }
 \description{
-Binds functions to a \code{mongolite::mongo} object. The data returned from the MongoDB query
-must be able to be coerced into a data.table.
+Binds methods to a \code{mongolite::mongo} object. The data returned from the MongoDB query
+must be able to be coerced into a \code{data.table}.
 }
 \section{Methods}{
 
@@ -28,7 +28,7 @@ must be able to be coerced into a data.table.
 ## create mongolite::mongo connection
 mongo <- mongolite::mongo(collection = "test", db = "test", url = "mongodb://localhost")
 
-## bind mongolitedt functions
+## bind mongolitedt methods
 bind_mongolitedt(mongo)
 
 ## finddt
