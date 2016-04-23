@@ -5,7 +5,8 @@ Version: 0.1
 Date: 2016-04-21
 Author: D Cooley
 Maintainer: David Cooley <dcooley@symbolix.com.au>
-Description: A faster implementation of find and aggregate functions for mongolite.
+Description: A faster implementation of find and aggregate functions for
+    mongolite.
 License: Apache License 2.0
 LazyData: TRUE
 Imports:
@@ -15,3 +16,9 @@ Depends:
     data.table
 LinkingTo: Rcpp
 RoxygenNote: 5.0.1
+Collate:
+    'RcppExports.R'
+    'mongo_stream_in_dt.R'
+    'bind_mongolitedt.R'
+    'try_rbind_page.R'
+    'unlock.R'
