@@ -11,7 +11,7 @@ License: Apache License 2.0
 LazyData: TRUE
 Imports:
     Rcpp (>= 0.12.3),
-    mongolite (>= 0.8.1.9000),
+    mongolite,
     data.table (>= 1.9.6)
 LinkingTo: Rcpp
 RoxygenNote: 5.0.1
