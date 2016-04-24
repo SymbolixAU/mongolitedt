@@ -3,5 +3,4 @@
 export(bind_mongolitedt)
 import(mongolite)
 importFrom(Rcpp,evalCpp)
-importFrom(data.table,rbindlist)
 useDynLib(mongolitedt)
