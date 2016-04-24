@@ -1,3 +1,9 @@
+#' @import mongolite
+#' @importFrom Rcpp evalCpp
+#' @importFrom data.table rbindlist
+#' @include mongo_stream_in_dt.R
+NULL
+
 #' Bind Mongolitedt
 #'
 #' Binds methods to a \code{mongolite::mongo} object. The data returned from the MongoDB query
@@ -5,9 +11,6 @@
 #'
 #' @param mongo A \code{mongolite::mongo} connection object to which the methods are bound
 #' @return mongo The mongo object with additional methods
-#' @import mongolite
-#' @importFrom Rcpp evalCpp
-#' @importFrom data.table rbindlist
 #' @useDynLib mongolitedt
 #' @aliases mongolitedt
 #' @examples
@@ -40,7 +43,7 @@ bind_mongolitedt <- function(mongo){
 
   ## assign new finddt function
   mongo$finddt <- function(query = '{}', fields = '{"_id":0}', sort = '{}', skip = 0, limit = 0, pagesize = 1000){
-    ##cur <- mongolite:::mongo_collection_find(col, query = query, sort = sort, fields = fields, skip = skip, limit = limit)
+    cur <- mongolite:::mongo_collection_find(col, query = query, sort = sort, fields = fields, skip = skip, limit = limit)
     mongo_stream_in_dt()
   }
 
