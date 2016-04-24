@@ -11,7 +11,6 @@ NULL
 #' @import mongolite
 #' @importFrom Rcpp evalCpp
 #' @importFrom data.table rbindlist
-#' @useDynLib mongolitedt
 #' @export
 #' @aliases mongolitedt
 #' @examples
