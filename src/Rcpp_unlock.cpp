@@ -9,7 +9,7 @@ https://github.com/SurajGupta/r-source/blob/master/src/main/envir.c
 #define UNLOCK_FRAME(e) SET_ENVFLAGS(e, ENVFLAGS(e) & (~ FRAME_LOCK_MASK))
 
   // [[Rcpp::export]]
-bool unlock_environment(Environment env) {
+bool R_unlock_environment(Environment env) {
   UNLOCK_FRAME(env);
   return FRAME_IS_LOCKED(env) == 0;
 }

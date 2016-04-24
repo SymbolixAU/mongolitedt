@@ -39,7 +39,7 @@ bind_mongolitedt <- function(mongo){
   ## sum(class(mongo) %in% c("mongo", "jeroen")) >= 2
   ## inherits(mongo, "mongo")
   ## is(mongo, "mongo")
-  unlock_environment(mongo)
+  R_unlock_environment(mongo)
 
   ## assign new finddt function
   mongo$finddt <- function(query = '{}', fields = '{"_id":0}', sort = '{}', skip = 0, limit = 0, pagesize = 1000){

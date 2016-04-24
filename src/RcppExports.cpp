@@ -5,14 +5,14 @@
 
 using namespace Rcpp;
 
-// unlock_environment
-bool unlock_environment(Environment env);
-RcppExport SEXP mongolitedt_unlock_environment(SEXP envSEXP) {
+// R_unlock_environment
+bool R_unlock_environment(Environment env);
+RcppExport SEXP mongolitedt_R_unlock_environment(SEXP envSEXP) {
 BEGIN_RCPP
     Rcpp::RObject __result;
     Rcpp::RNGScope __rngScope;
     Rcpp::traits::input_parameter< Environment >::type env(envSEXP);
-    __result = Rcpp::wrap(unlock_environment(env));
+    __result = Rcpp::wrap(R_unlock_environment(env));
     return __result;
 END_RCPP
 }

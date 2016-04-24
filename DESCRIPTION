@@ -19,4 +19,7 @@ Collate:
     'RcppExports.R'
     'mongo_stream_in_dt.R'
     'bind_mongolitedt.R'
+    'onAttach.R'
+    'onLoad.R'
+    'onUnload.R'
     'try_rbind_page.R'
