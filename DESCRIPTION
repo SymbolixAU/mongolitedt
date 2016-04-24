@@ -20,4 +20,3 @@ Collate:
     'mongo_stream_in_dt.R'
     'bind_mongolitedt.R'
     'try_rbind_page.R'
-    'unlock.R'
