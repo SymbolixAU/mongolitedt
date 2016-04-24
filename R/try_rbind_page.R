@@ -5,7 +5,7 @@
 try_rbind_page <- function(lst){
 
   lst <- tryCatch({
-    data.table::rbindlist(lst)
+    data.table::rbindlist(lst, use.names = TRUE, fill = TRUE)
   },
   error = function(cond){
     ## causes of errors:
