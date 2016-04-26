@@ -40,10 +40,12 @@ bind_mongolitedt <- function(mongo){
   ## is(mongo, "mongo")
   R_unlock_environment(mongo)
 
-  ## assign new finddt function
+  ## `mongolitedt:::` required as environment has changed
+  ## `mongolite:::` required as mongo_collection_* are internal functions
   mongo$finddt <- function(query = '{}', fields = '{"_id":0}', sort = '{}', skip = 0, limit = 0, pagesize = 1000){
     cur <- mongolite:::mongo_collection_find(col, query = query, sort = sort, fields = fields, skip = skip, limit = limit)
     mongolitedt:::mongo_stream_in_dt(cur, pagesize = pagesize, verbose = verbose)
+
   }
 
   mongo$aggregatedt <- function(pipeline = '{}', pagesize = 1000){
