@@ -9,7 +9,7 @@ Description: A faster implementation of find and aggregate functions for
     mongolite.
 License: Apache License 2.0
 LazyData: TRUE
-Depends: mongolite (>= 0.8.1.9000)
+Depends: mongolite (>= 0.8.1)
 Imports:
     Rcpp (>= 0.12.3),
     data.table (>= 1.9.6)
