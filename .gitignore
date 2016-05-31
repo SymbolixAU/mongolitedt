@@ -2,6 +2,6 @@
 .Rhistory
 .RData
 src/*.a
-src/*.a
 *.so
 *.o
+inst/doc

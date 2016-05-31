@@ -23,3 +23,7 @@ Collate:
     'onLoad.R'
     'onUnload.R'
     'try_rbind_page.R'
+Suggests: testthat,
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr

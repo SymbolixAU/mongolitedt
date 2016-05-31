@@ -1,5 +1,10 @@
 # mongolitedt
 
+[![Build Status](https://travis-ci.org/SymbolixAU/mongolitedt.svg?branch=master)](https://travis-ci.org/SymbolixAU/mongolitedt)
+[![Coverage Status](https://codecov.io/github/SymbolixAU/mongolitedt/coverage.svg?branch=master)](https://codecov.io/github/SymbolixAU/mongolitedt?branch=master)
+[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/mongolitedt)](http://cran.r-project.org/package=mongolitedt)
+[![CRAN RStudio mirror downloads](http://cranlogs.r-pkg.org/badges/mongolitedt)](http://cran.r-project.org/web/packages/mongolitedt/index.html)
+[![Github Stars](https://img.shields.io/github/stars/SymbolixAU/mongolitedt.svg?style=social&label=Github)](https://github.com/SymbolixAU/mongolitedt)
 
 Extends `mongolite` with `finddt()` and `aggregatedt()` that return `data.table` objects. 
 
