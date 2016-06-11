@@ -11,7 +11,7 @@ vignette: >
 
 ## Mongolitedt
 
-Mongolitedt is an extension to [mongolite](https://cran.r-project.org/web/packages/mongolite/index.html). It binds two methods, `finddt()` and `aggregatedt()` to the `mongo` object that's created through `mongo <- mongo()`. 
+Mongolitedt is an extension to [mongolite](https://cran.r-project.org/package=mongolite). It binds two methods, `finddt()` and `aggregatedt()` to the `mongo` object that's created through `mongo <- mongo()`. 
 
 These functions return `data.table` objects from the find or aggregate query. Therefore, the query you send to `mongodb` has to be able to be coerced into a `data.table`. If not, it will throw an error.
 

@@ -23,6 +23,6 @@ The function in this package, `bind_mongolitedt()` unlocks the environment aroun
 
 The initial call to the `mongolite::mongo()` function takes 4 arguments: `mongolite::mongo(collection, db, url, verbose)`, which are then used by the methods assigned to the mongo object (`m`)
 
-The `verbose` argument is thefore defined in the **mongolite** package, and so is not defined in this package.
+The `verbose` argument is thefore defined in the **mongolite** package, and so is not defined in this package, but is used by the methods in this package.
 
 
