@@ -12,7 +12,7 @@
 
 **"Unexported objects imported by ':::' calls"**
 
-This package (**mongolitedt**) binds new methods to an object created from **mongolite**.
+This package (**mongolitedt**) binds new methods to an object created from the package **mongolite**.
 
 The function `m <- mongolite::mongo()` creates a connection object (`m`) to a **mongodb** database.
 `m` has associated methods and is in a locked environment.
