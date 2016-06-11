@@ -9,50 +9,87 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-Vignettes are long form documentation commonly included in packages. Because they are part of the distribution of the package, they need to be as compact as possible. The `html_vignette` output type provides a custom style sheet (and tweaks some options) to ensure that the resulting html is as small as possible. The `html_vignette` format:
+## Mongolitedt
 
-- Never uses retina figures
-- Has a smaller default figure size
-- Uses a custom CSS stylesheet instead of the default Twitter Bootstrap style
+Mongolitedt is an extension to [mongolite](https://cran.r-project.org/web/packages/mongolite/index.html). It binds two methods, `finddt()` and `aggregatedt()` to the `mongo` object that's created through `mongo <- mongo()`. 
 
-## Vignette Info
+These functions return `data.table` objects from the find or aggregate query. Therefore, the query you send to `mongodb` has to be able to be coerced into a `data.table`. If not, it will throw an error.
 
-Note the various macros within the `vignette` section of the metadata block above. These are required in order to instruct R how to build the vignette. Note that you should change the `title` field and the `\VignetteIndexEntry` to match the title of your vignette.
 
-## Styles
+## Examples
 
-The `html_vignette` template includes a basic CSS theme. To override this theme you can specify your own CSS in the document metadata as follows:
+You bind the two functions using `bind_mongolitedt()`
 
-    output: 
-      rmarkdown::html_vignette:
-        css: mystyles.css
+```
+## create a mongo() connection object
+mongo <- mongo(collection = "vignette",
+               db = "mongolitedt",
+               url = "mongodb://localhost")
 
-## Figures
+## looking at the mongo object we see all the methods currently attached.
+mongo
+# <Mongo collection> 'test' 
+#  $aggregate(pipeline = "{}", handler = NULL, pagesize = 1000) 
+#  $count(query = "{}") 
+#  $distinct(key, query = "{}") 
+#  $drop() 
+#  $export(con = stdout(), bson = FALSE) 
+#  $find(query = "{}", fields = "{\"_id\":0}", sort = "{}", skip = 0, limit = 0, handler = NULL, pagesize = 1000) 
+#  $import(con, bson = FALSE) 
+#  $index(add = NULL, remove = NULL) 
+#  $info() 
+#  $insert(data, pagesize = 1000) 
+#  $iterate(query = "{}", fields = "{\"_id\":0}", sort = "{}", skip = 0, limit = 0) 
+#  $mapreduce(map, reduce, query = "{}", sort = "{}", limit = 0, out = NULL, scope = NULL) 
+#  $remove(query, multiple = FALSE) 
+#  $rename(name, db = NULL) 
+#  $update(query, update = "{\"$set\":{}}", upsert = FALSE, multiple = FALSE) 
 
-The figure sizes have been customised so that you can easily put two images side-by-side. 
-
-```{r, fig.show='hold'}
-plot(1:10)
-plot(10:1)
 ```
 
-You can enable figure captions by `fig_caption: yes` in YAML:
+We can now bind the two new functions and see them added to the `mongo` object
 
-    output:
-      rmarkdown::html_vignette:
-        fig_caption: yes
+```
+bind_mongolitedt(mongo)
 
-Then you can use the chunk option `fig.cap = "Your figure caption."` in **knitr**.
+## and look at the methods
+mongo
+# <Mongo collection> 'test' 
+#  $aggregate(pipeline = "{}", handler = NULL, pagesize = 1000) 
+#  $aggregatedt(pipeline = "{}", pagesize = 1000) 
+#  $count(query = "{}") 
+#  $distinct(key, query = "{}") 
+#  $drop() 
+#  $export(con = stdout(), bson = FALSE) 
+#  $find(query = "{}", fields = "{\"_id\":0}", sort = "{}", skip = 0, limit = 0, handler = NULL, pagesize = 1000) 
+#  $finddt(query = "{}", fields = "{\"_id\":0}", sort = "{}", skip = 0, limit = 0, pagesize = 1000) 
+#  $import(con, bson = FALSE) 
+#  $index(add = NULL, remove = NULL) 
+#  $info() 
+#  $insert(data, pagesize = 1000) 
+#  $iterate(query = "{}", fields = "{\"_id\":0}", sort = "{}", skip = 0, limit = 0) 
+#  $mapreduce(map, reduce, query = "{}", sort = "{}", limit = 0, out = NULL, scope = NULL) 
+#  $remove(query, multiple = FALSE) 
+#  $rename(name, db = NULL) 
+#  $update(query, update = "{\"$set\":{}}", upsert = FALSE, multiple = FALSE) 
 
-## More Examples
-
-You can write math expressions, e.g. $Y = X\beta + \epsilon$, footnotes^[A footnote here.], and tables, e.g. using `knitr::kable()`.
-
-```{r, echo=FALSE, results='asis'}
-knitr::kable(head(mtcars, 10))
 ```
 
-Also a quote using `>`:
+In the above example we see the two methods, `finddt()` and `aggregatedt()` have been attached to the `mongo` object.
 
-> "He who gives up [code] safety for [code] speed deserves neither."
-([via](https://twitter.com/hadleywickham/status/504368538874703872))
+You then use them as you would the regular `find` and `aggregate` methods. However, the returned objects will be `data.table`s.
+
+
+```{r}
+
+
+
+
+
+
+
+```
+
+
+
+
