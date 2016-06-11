@@ -2,7 +2,7 @@ Package: mongolitedt
 Type: Package
 Title: Extends Mongolite
 Version: 0.1
-Date: 2016-04-21
+Date: 2016-06-11
 Author: D Cooley
 Maintainer: David Cooley <dcooley@symbolix.com.au>
 Description: A faster implementation of find and aggregate functions for

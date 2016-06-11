@@ -1,6 +1,3 @@
-#' @include mongo_stream_in_dt.R
-NULL
-
 #' Bind Mongolitedt
 #'
 #' Binds methods to a \code{mongolite::mongo} object. The data returned from the MongoDB query
