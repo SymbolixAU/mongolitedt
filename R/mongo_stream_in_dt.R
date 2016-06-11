@@ -18,7 +18,7 @@ mongo_stream_in_dt <- function(cur, pagesize = 1000, verbose = TRUE){
     dt_page <- try_rbind_page(page)
     classes <- lapply(dt_page, class) == "list"
     cols <- names(classes[classes])
-    for(j in cols) set(dt_page, j = j, value = unlist(dt_page[[j]]))
+    for(j in cols) data.table::set(dt_page, j = j, value = unlist(dt_page[[j]]))
 
     if(nrow(dt) == 0){
       dt <- dt_page
