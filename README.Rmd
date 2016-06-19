@@ -42,6 +42,10 @@ some quick benchmarks:
 ## Installation
 
 ```
+
+## when accepted on CRAN
+install.packages("mongolitedt")
+
 ### install development version from github
 devtools::install_github("SymbolixAU/mongolitedt")
 ```

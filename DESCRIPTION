@@ -1,7 +1,7 @@
 Package: mongolitedt
 Type: Package
 Title: Extends Mongolite
-Version: 0.1
+Version: 0.2.0
 Date: 2016-06-19
 Author: D Cooley
 Maintainer: David Cooley <dcooley@symbolix.com.au>
