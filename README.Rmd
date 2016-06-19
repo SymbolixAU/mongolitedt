@@ -16,6 +16,8 @@ To use these functions the query sent to mongodb **should** return data that can
 
 ## Examples
 
+See [vignettes](https://github.com/SymbolixAU/mongolitedt/blob/master/vignettes/mongolitedt-vignette.Rmd) for detailed exampels
+
 Define a `mongolite::mongo` connection object
 
 Then call `bind_mongolitedt(mongo)` to bind the `finddt()` and `aggregatedt()` functions
