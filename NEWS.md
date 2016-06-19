@@ -1,6 +1,6 @@
-# mongolitedt 0.1
+# mongolitedt 0.2
 
-* Added a `NEWS.md` file to track changes to the package.
+* Release version submitted to CRAN
 
 
 
